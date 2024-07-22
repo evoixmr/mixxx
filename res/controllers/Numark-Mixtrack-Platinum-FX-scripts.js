@@ -1027,13 +1027,13 @@ MixtrackPlatinumFX.PadSection = function(deckNumber) {
                 }
                 this.longPressHeld = true;
 
-                const mixtrackObject = this; // Can't use 'this' in function below
+                const thirdaryMode = this; // Can't use 'this' in function below
                 this.longPressTimer = engine.beginTimer(components.Button.prototype.longPressTimeout*2, function() {
-                    if (mixtrackObject.longPressHeld) {
-                        mixtrackObject.setMode(channel, mixtrackObject.longPressMode);
+                    if (thirdaryMode.longPressHeld) {
+                        thirdaryMode.setMode(channel, thirdaryMode.longPressMode);
                     }
-                    mixtrackObject.longPressTimer = 0;
-                    mixtrackObject.longPressHeld = false;
+                    thirdaryMode.longPressTimer = 0;
+                    thirdaryMode.longPressHeld = false;
                 }, true);
             }
         }
